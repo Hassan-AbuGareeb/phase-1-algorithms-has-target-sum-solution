@@ -1,5 +1,13 @@
 function hasTargetSum(array, target) {
-  // Write your algorithm here
+  let seenObjects = {}
+
+  for(let i = 0 ; i < array.length; i ++){
+    const complement = target-array[i];
+    if(seenObjects[complement]) return true;
+
+    seenObjects[array[i]]= true;
+  }
+  return false;
 }
 
 /* 
